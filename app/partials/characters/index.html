@@ -1,4 +1,5 @@
 <h2>{{title}}</h2>
+
 <ul> 
-  <li ng-repeat="character in characters">dude:{{character.balicName}}</li>
+  <li ng-repeat="character in characters"><a ng-href="#/characters/{{$index}}">{{character.balicName}}</a></li>
 </ul>
