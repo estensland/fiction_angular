@@ -1,4 +1,4 @@
 [
-  {"name": "Will", "age": 30, "isSpecial": false},
-  {"name": "Laura", "age": 26, "isSpecial": true}
+  {"balicName": "Inhar", "nativeName": "Ulric Eirikur", "nationality": "Talamh Cloch/ Sorgian", "occupation": "Prince of Talamh Cloch/ Diplomatic Agent"},
+  {"balicName": "Iontacha", "nativeName": "*Same*", "nationality": "Bailic", "occupation": "Princess of Baile"}
 ]
