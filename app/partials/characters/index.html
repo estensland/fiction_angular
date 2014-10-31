@@ -1,5 +1,23 @@
 <h2>{{title}}</h2>
-
-<ul> 
-  <li ng-repeat="character in characters"><a ng-href="#/characters/{{$index}}">{{character.balicName}}</a></li>
-</ul>
+<table>
+  <thead>
+    <td >Bailic name</td>
+    <td >Native Name</td>
+    <td >House</td>
+    <td >Nickname</td>
+    <td >Nationality</td>
+    <td >Occupation</td>
+    <td >Fighting Class</td>
+    <td >Real Person</td>
+  </thead>
+  <tr ng-repeat="character in characters">
+    <td ><a ng-href="#/characters/{{$index}}">{{character.bailicName}}</a></td>
+    <td >{{character.nativeName}}</td>
+    <td >{{character.house}}</td>
+    <td >{{character.nickname}}</td>
+    <td >{{character.nationality}}</td>
+    <td >{{character.occupation}}</td>
+    <td >{{character.fightingClass}}</td>
+    <td >{{character.realPerson}}</td>
+  </tr>
+</table>

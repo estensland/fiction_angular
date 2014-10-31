@@ -33,16 +33,19 @@ angular.module('myApp.characters', ['ngRoute'])
     $scope.param = $routeParams.id;
 }])
   .controller('CharacterCtrl', ['$scope', '$routeParams', 'characters', function($scope, $routeParams, characters) {
-    $scope.title = 'Characters';
     $scope.character = characters[$routeParams.id];
-    $scope.titleName = function(){
-        var title = ''
-        var bailicName = $scope.character.balicName;
+    $scope.title = function(){
+        var title = '';
+        var bailicName = $scope.character.bailicName;
         var nativeName = $scope.character.nativeName;
         var house = $scope.character.house;
-        if (bailicName !== '*Refuses*'){title = title + bailicName + " "; }
-        if (nativeName !== '*Same*'){title = title + nativeName + " ";}
-        if (house !== 'Non-Noble'){title = title + house;}
+        var nickname = $scope.character.nickname;
+
+        if (bailicName !== '*Refuses*') {title = title + bailicName + " "; }
+        if (nativeName !== '*Same*')    {title = title + nativeName + " ";}
+        if (house !== 'Non-Noble')      {title = title + house;}
+        if (nickname)                   {title = title + " " + nickname;}
+
         return title;
       }();
     }]);
