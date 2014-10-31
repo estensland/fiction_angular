@@ -28,3 +28,91 @@
   content: "";
   padding: 0;
 }
+
+/*---------------------*/
+
+h2{
+  width:100%;
+  text-indent: 4em;
+}
+
+
+/*Character Index*/
+
+.main-table{
+  margin-left: 20px;
+  color: black;
+}
+
+.main-table a{
+  color: #876AFC;
+}
+
+.main-table td{
+  padding: 5px;
+  border: 1px solid black;
+}
+
+.main-table th{
+  background-color: red;
+  padding: 5px;
+  font-weight: bold;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
+
+.main-table .right-tab-header{
+  border-top-right-radius: 20px;
+  border-right: 0;
+}
+
+.main-table .left-tab-header{
+  border-top-left-radius: 20px;
+  border-left: 0;
+}
+
+.nickname-column{
+  width: 18%;
+}
+
+.occupation-column{
+  width: 20%;
+}
+
+
+
+/*Character Show*/
+
+.character-info-panel{
+  margin-left: 62%;
+  width: 35%;
+  text-align:left;
+  padding: 5px;
+  border: 2px solid black;
+  background-color: #eee;
+}
+
+.character-info-panel span{
+  font-weight: bold;
+}
+
+.character-info-panel h4{
+  text-indent: 2em;
+  margin: 0;
+  padding: 3px;
+  background-color: red;
+}
+
+.character-info-panel p{
+  margin: 0;
+  padding: 2px;
+}
+
+/* Footer */
+.footer {
+  font-size: 78%;
+  display: block;
+  position: absolute;
+  left: 30px;
+  bottom:-400px;
+}

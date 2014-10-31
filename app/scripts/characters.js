@@ -44,7 +44,12 @@ angular.module('myApp.characters', ['ngRoute'])
         if (bailicName !== '*Refuses*') {title = title + bailicName + " "; }
         if (nativeName !== '*Same*')    {title = title + nativeName + " ";}
         if (house !== 'Non-Noble')      {title = title + house;}
-        if (nickname)                   {title = title + " " + nickname;}
+        if (nickname) {
+          if (nickname.match(/\(.*\)/)){
+            nickname = nickname.replace(/\(.*\)/, '')
+          }
+          title = title + " " + nickname;
+        }
 
         return title;
       }();
