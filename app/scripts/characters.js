@@ -34,23 +34,26 @@ angular.module('myApp.characters', ['ngRoute'])
 }])
   .controller('CharacterCtrl', ['$scope', '$routeParams', 'characters', function($scope, $routeParams, characters) {
     $scope.character = characters[$routeParams.id];
+    $scope.coatOfArms = "/api/images/" + $scope.character.coatOfArms;
     $scope.title = function(){
-        var title = '';
-        var bailicName = $scope.character.bailicName;
-        var nativeName = $scope.character.nativeName;
-        var house = $scope.character.house;
-        var nickname = $scope.character.nickname;
+      var title = '';
+      var nobleOffice = $scope.character.nobleOffice;
+      var bailicName = $scope.character.bailicName;
+      var nativeName = $scope.character.nativeName;
+      var house = $scope.character.house;
+      var nickname = $scope.character.nickname;
 
-        if (bailicName !== '*Refuses*') {title = title + bailicName + " "; }
-        if (nativeName !== '*Same*')    {title = title + nativeName + " ";}
-        if (house !== 'Non-Noble')      {title = title + house;}
-        if (nickname) {
-          if (nickname.match(/\(.*\)/)){
-            nickname = nickname.replace(/\(.*\)/, '')
-          }
-          title = title + " " + nickname;
+      if (nobleOffice !== undefined) {title = title + nobleOffice + " "; }
+      if (bailicName !== '*Refuses*') {title = title + bailicName + " "; }
+      if (nativeName !== '*Same*')    {title = title + nativeName + " ";}
+      if (house !== 'Non-Noble')      {title = title + house;}
+      if (nickname) {
+        if (nickname.match(/\(.*\)/)){
+          nickname = nickname.replace(/\(.*\)/, '');
         }
+        title = title + " " + nickname;
+      }
 
-        return title;
-      }();
-    }]);
+      return title;
+    }();
+  }]);
