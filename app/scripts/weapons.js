@@ -34,5 +34,5 @@ angular.module('myApp.weapons', ['ngRoute'])
 }])
   .controller('WeaponCtrl', ['$scope', '$routeParams', 'weapons', function($scope, $routeParams, weapons) {
     $scope.weapon = weapons[$routeParams.id];
-    $scope.image = "/api/images/weapons/" + weapons[$routeParams.id];weapons[$routeParams.id]
+    $scope.image = "/api/images/weapons/" + $routeParams.id + ".png";
   }]);

@@ -2,7 +2,12 @@
 
 <div class="character-info-panel">
   <h4>Arms:</h4>
-  <img src={{coatOfArms}} alt="coat of arms">
+    <div ng-if={{coatOfArms}} "=== undefined">
+      <p>No Arms Recorded</p>
+    </div>
+    <div ng-if={{coatOfArms === undefined}}>
+      <img src={{coatOfArms}} alt="coat of arms">
+    </div>
   <h4>Name Info:</h4>
   <p><span>Bailic Name:</span> {{character.bailicName}}</p>
   <p><span>Native Name:</span> {{character.nativeName}}</p>
