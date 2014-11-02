@@ -1,0 +1,15 @@
+<h2>{{title}}</h2>
+<table class="main-table">
+  <thead>
+    <th class="left-tab-header">Name</th>
+    <th >Translation</th>
+    <th >Aibitir</th>
+    <th class="right-tab-header">Current Owner</th>
+  </thead>
+  <tr ng-repeat="weapons in weapons">
+    <td ><a ng-href="#/weapons/{{$index}}">{{weapons.name}}</a></td>
+    <td >{{weapons.nameTranslation}}</td>
+    <td >{{weapons.aibitir}}</td>
+    <td >{{weapons.currentOwner}}</td>
+  </tr>
+</table>

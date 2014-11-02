@@ -5,6 +5,7 @@ angular.module('myApp', [
   'ngRoute',
   'myApp.home',
   'myApp.characters',
+  'myApp.weapons',
   'myApp.version'
 ]).
 config(['$routeProvider', function($routeProvider) {
