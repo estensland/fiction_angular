@@ -2,11 +2,8 @@
 
 <div class="character-info-panel">
   <h4>Arms:</h4>
-    <div ng-if={{coatOfArms}} "=== undefined">
-      <p>No Arms Recorded</p>
-    </div>
-    <div ng-if={{coatOfArms === undefined}}>
-      <img src={{coatOfArms}} alt="coat of arms">
+    <div>
+      <img src="{{coatOfArms === '/api/images/undefined' ? '/api/images/blank_arms.png' : coatOfArms}}" alt="coat of arms">
     </div>
   <h4>Name Info:</h4>
   <p><span>Bailic Name:</span> {{character.bailicName}}</p>
