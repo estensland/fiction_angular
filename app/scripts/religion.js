@@ -28,7 +28,10 @@ angular.module('myApp.religion', ['ngRoute'])
     $scope.param = $routeParams.name;
     $scope.title = $scope.faith_data.name;
     $scope.aliases = $scope.faith_data.aliases;
+    $scope.divines = $scope.faith_data.divines;
+    $scope.lesserBeings = $scope.faith_data.lesserBeings;
     $scope.clergy = $scope.faith_data.clericClasses;
+    $scope.spirits = $scope.faith_data.spirits;
     $scope.spiritClerics = $scope.faith_data.spiritClerics;
     $scope.cosmology = $scope.faith_data.cosmology;
     $scope.orders = $scope.faith_data.clericalOrders;

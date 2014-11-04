@@ -16,6 +16,30 @@
       </tr>
     </table>
   </li>
+  <li id='clergy'> <h4>Divinities:</h4>
+    <table class="main-table">
+      <thead>
+        <th class="left-tab-header">Being</th>
+        <th class="right-tab-header">Description</th>
+      </thead>
+      <tr ng-repeat="divine in divines">
+        <td>{{divine.name}}</td>
+        <td>{{divine.desc}}</td>
+      </tr>
+    </table>
+  </li>
+  <li id='clergy'> <h4>Lesser Beings:</h4>
+    <table class="main-table">
+      <thead>
+        <th class="left-tab-header">Being</th>
+        <th class="right-tab-header">Description</th>
+      </thead>
+      <tr ng-repeat="lesserBeing in lesserBeings">
+        <td>{{lesserBeing.name}}</td>
+        <td>{{lesserBeing.desc}}</td>
+      </tr>
+    </table>
+  </li>
   <li id='clergy'> <h4>Divine Clergy:</h4>
     <table class="main-table">
       <thead>
@@ -25,6 +49,20 @@
       <tr ng-repeat="typeOfCleric in clergy">
         <td>{{typeOfCleric.name}}</td>
         <td>{{typeOfCleric.desc}}</td>
+      </tr>
+    </table>
+  </li>
+  <li id='clergy'> <h4>Spirits:</h4>
+    <table class="main-table">
+      <thead>
+        <th class="left-tab-header">Being</th>
+        <th>Where Honored</th>
+        <th class="right-tab-header">Description</th>
+      </thead>
+      <tr ng-repeat="spirit in spirits">
+        <td>{{spirit.name}}</td>
+        <td>{{spirit.where}}</td>
+        <td>{{spirit.desc}}</td>
       </tr>
     </table>
   </li>
