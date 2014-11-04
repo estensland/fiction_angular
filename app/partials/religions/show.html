@@ -3,7 +3,20 @@
   <li id='aliases'> <h4>Aliases:</h4>
   <p>{{aliases}}</p>
   </li>
-  <li id='clergy'> <h4>Clergy:</h4>
+  <li id='cosmology'> <h4>Cosmology:</h4>
+    <img src="/api/images/religions/{{param}}_cosmology.jpg" alt="">
+    <table class="main-table">
+      <thead>
+        <th class="left-tab-header">Realm</th>
+        <th class="right-tab-header">Description</th>
+      </thead>
+      <tr ng-repeat="realm in cosmology">
+        <td>{{realm.name}}</td>
+        <td>{{realm.desc}}</td>
+      </tr>
+    </table>
+  </li>
+  <li id='clergy'> <h4>Divine Clergy:</h4>
     <table class="main-table">
       <thead>
         <th class="left-tab-header">Type</th>
@@ -15,15 +28,28 @@
       </tr>
     </table>
   </li>
-
-  <li id='clergy'> <h4>Religious Orders:</h4>
+  <li id='spirit-clergy'> <h4>Spirit Clergy:</h4>
     <table class="main-table">
       <thead>
-        <th class="left-tab-header">Order</th>
+        <th class="left-tab-header">Type</th>
+        <th class="right-tab-header">Description</th>
+      </thead>
+      <tr ng-repeat="typeOfCleric in spiritClerics">
+        <td>{{typeOfCleric.name}}</td>
+        <td>{{typeOfCleric.desc}}</td>
+      </tr>
+    </table>
+  </li>
+  <li id='orders'> <h4>Religious Orders:</h4>
+    <table class="main-table">
+      <thead>
+        <th class="left-tab-header">Symbol</th>
+        <th>Order</th>
         <th>Habit</th>
         <th class="right-tab-header">Description</th>
       </thead>
       <tr ng-repeat="order in orders">
+        <td><img src="/api/images/religions/{{order.name.split(' ')[0]}}.jpg" alt="symbol"></td>
         <td>{{order.name}}</td>
         <td>{{order.habit}}</td>
         <td>{{order.desc}}</td>

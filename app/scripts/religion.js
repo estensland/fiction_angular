@@ -25,9 +25,12 @@ angular.module('myApp.religion', ['ngRoute'])
 }])
   .controller('TheFaithCtrl', ['$scope', '$routeParams', 'json_grab', function($scope, $routeParams, json_grab) {
     $scope.faith_data = json_grab[$routeParams.name];
+    $scope.param = $routeParams.name;
     $scope.title = $scope.faith_data.name;
     $scope.aliases = $scope.faith_data.aliases;
     $scope.clergy = $scope.faith_data.clericClasses;
+    $scope.spiritClerics = $scope.faith_data.spiritClerics;
+    $scope.cosmology = $scope.faith_data.cosmology;
     $scope.orders = $scope.faith_data.clericalOrders;
     $scope.holyOnes = $scope.faith_data.holyOnes;
   }]);
