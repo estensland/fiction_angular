@@ -5,6 +5,7 @@ angular.module('myApp', [
   'ngRoute',
   'myApp.home',
   'myApp.characters',
+  'myApp.religion',
   'myApp.weapons',
   'myApp.version'
 ]).

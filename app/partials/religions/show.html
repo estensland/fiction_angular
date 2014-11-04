@@ -1,0 +1,52 @@
+<h2>{{title}}</h2>
+<ul>
+  <li id='aliases'> <h4>Aliases:</h4>
+  <p>{{aliases}}</p>
+  </li>
+  <li id='clergy'> <h4>Clergy:</h4>
+    <table class="main-table">
+      <thead>
+        <th class="left-tab-header">Type</th>
+        <th class="right-tab-header">Description</th>
+      </thead>
+      <tr ng-repeat="typeOfCleric in clergy">
+        <td>{{typeOfCleric.name}}</td>
+        <td>{{typeOfCleric.desc}}</td>
+      </tr>
+    </table>
+  </li>
+
+  <li id='clergy'> <h4>Religious Orders:</h4>
+    <table class="main-table">
+      <thead>
+        <th class="left-tab-header">Order</th>
+        <th>Habit</th>
+        <th class="right-tab-header">Description</th>
+      </thead>
+      <tr ng-repeat="order in orders">
+        <td>{{order.name}}</td>
+        <td>{{order.habit}}</td>
+        <td>{{order.desc}}</td>
+      </tr>
+    </table>
+  </li>
+
+  <li id='holy_ones'> <h4>Holy Ones:</h4>
+    <table class="main-table">
+      <thead>
+        <th class="left-tab-header">Name</th>
+        <th>Life Span</th>
+        <th>Buried</th>
+        <th>Honored By</th>
+        <th class="right-tab-header">Description</th>
+      </thead>
+      <tr ng-repeat="person in holyOnes">
+        <td>{{person.name}}</td>
+        <td>{{person.lifeSpan}}</td>
+        <td>{{person.buried}}</td>
+        <td>{{person.honoredBy}}</td>
+        <td>{{person.desc}}</td>
+      </tr>
+    </table>
+  </li>
+</ul>

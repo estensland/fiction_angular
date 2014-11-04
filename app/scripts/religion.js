@@ -3,23 +3,16 @@
 angular.module('myApp.religion', ['ngRoute'])
 
   .config(['$routeProvider', function($routeProvider) {
-    $routeProvider.when('/characters', {
-      templateUrl: 'partials/characters/',
-      controller: 'CharactersCtrl',
-      resolve: {
-        characters: ['$http', function($http) {
-          return $http.get('/api/people.json').then(function(response) {
-            return response.data;
-          });
-        }]
-      }
+    $routeProvider.when('/religions', {
+      templateUrl: 'partials/religions/',
+      controller: 'ReligionCtrl',
     });
-    $routeProvider.when('/characters/:id', {
-      templateUrl: 'partials/characters/show.html',
-      controller: 'CharacterCtrl',
+    $routeProvider.when('/religions/:name', {
+      templateUrl: 'partials/religions/show.html',
+      controller: 'TheFaithCtrl',
       resolve: {
-        characters: ['$http','$routeParams', function($http, $routeParams) {
-          return $http.get('/api/people.json').then(function(response) {
+        json_grab: ['$http','$routeParams', function($http, $routeParams) {
+          return $http.get('/api/religions.json').then(function(response) {
             return response.data;
           });
         }],
@@ -27,33 +20,14 @@ angular.module('myApp.religion', ['ngRoute'])
     });
   }])
 
-  .controller('CharactersCtrl', ['$scope', '$routeParams', 'characters', function($scope, $routeParams, characters) {
-    $scope.title = 'Characters';
-    $scope.characters = characters;
-    $scope.param = $routeParams.id;
+  .controller('ReligionCtrl', ['$scope', function($scope) {
+    $scope.title = 'Religions';
 }])
-  .controller('CharacterCtrl', ['$scope', '$routeParams', 'characters', function($scope, $routeParams, characters) {
-    $scope.character = characters[$routeParams.id];
-    $scope.coatOfArms = "/api/images/" + $scope.character.coatOfArms;
-    $scope.title = function(){
-      var title = '';
-      var nobleOffice = $scope.character.nobleOffice;
-      var bailicName = $scope.character.bailicName;
-      var nativeName = $scope.character.nativeName;
-      var house = $scope.character.house;
-      var nickname = $scope.character.nickname;
-
-      if (nobleOffice !== undefined) {title = title + nobleOffice + " "; }
-      if (bailicName !== '*Refuses*') {title = title + bailicName + " "; }
-      if (nativeName !== '*Same*')    {title = title + nativeName + " ";}
-      if (house !== 'Non-Noble')      {title = title + house;}
-      if (nickname) {
-        if (nickname.match(/\(.*\)/)){
-          nickname = nickname.replace(/\(.*\)/, '');
-        }
-        title = title + " " + nickname;
-      }
-
-      return title;
-    }();
+  .controller('TheFaithCtrl', ['$scope', '$routeParams', 'json_grab', function($scope, $routeParams, json_grab) {
+    $scope.faith_data = json_grab[$routeParams.name];
+    $scope.title = $scope.faith_data.name;
+    $scope.aliases = $scope.faith_data.aliases;
+    $scope.clergy = $scope.faith_data.clericClasses;
+    $scope.orders = $scope.faith_data.clericalOrders;
+    $scope.holyOnes = $scope.faith_data.holyOnes;
   }]);
