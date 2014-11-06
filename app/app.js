@@ -7,6 +7,7 @@ angular.module('myApp', [
   'myApp.characters',
   'myApp.peerage',
   'myApp.peoples',
+  'myApp.places',
   'myApp.religion',
   'myApp.weapons',
   'myApp.version'
