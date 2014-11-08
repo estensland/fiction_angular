@@ -1,0 +1,14 @@
+<h2>{{title}}</h2>
+
+<table>
+  <thead>
+    <th ng-repeat= 'key in keys'>
+      {{key}}
+    </th>
+  </thead>
+  <tr ng-repeat= 'place in places'>
+    <td ng-repeat= 'key in keys'>
+      {{place[key]}}
+    </td>
+  </tr>
+</table>

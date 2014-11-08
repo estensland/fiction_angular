@@ -35,6 +35,6 @@ angular.module('myApp.places', ['ngRoute'])
     $scope.title = $routeParams.name;
     $scope.json = json_grab;
     $scope.place = json_grab[$scope.title];
-    $scope.desc = $scope.place.desc;
+    $scope.keys = ['name', 'fullName', 'currentRuler', 'capital', 'specialRegalia', 'desc'];
     $scope.subdivisons = $scope.place.subs;
   }]);
