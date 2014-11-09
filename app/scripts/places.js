@@ -29,12 +29,12 @@ angular.module('myApp.places', ['ngRoute'])
 
   .controller('PlacesCtrl', ['$scope', 'json_grab', function($scope, json_grab) {
     $scope.title = 'Places';
-    $scope.peoples = json_grab;
+    $scope.places = json_grab;
 }])
   .controller('PlaceCtrl', ['$scope', '$routeParams', 'json_grab', function($scope, $routeParams, json_grab) {
     $scope.title = $routeParams.name;
     $scope.json = json_grab;
     $scope.place = json_grab[$scope.title];
-    $scope.keys = ['name', 'fullName', 'currentRuler', 'capital', 'specialRegalia', 'desc'];
-    $scope.subdivisons = $scope.place.subs;
+    $scope.keys = ['name', 'translation', 'desc'];
+    $scope.subs = $scope.place.subs;
   }]);
