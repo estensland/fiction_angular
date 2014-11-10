@@ -1,0 +1,9 @@
+<h2>{{title}}</h2>
+
+<p>{{blurb}}</p>
+
+<ul> Major Schools of Magic:
+  <li ng-repeat="(key, schools) in schoolss">
+    <a ng-href="#/magic/{{key}}">{{key}}</a>
+  </li>
+</ul>
