@@ -35,6 +35,7 @@ angular.module('myApp.magic', ['ngRoute'])
     $scope.title = $routeParams.name;
     $scope.json = json_grab;
     $scope.magic = json_grab[$scope.title];
-    $scope.keys = ['name', 'translation', 'desc'];
+    $scope.keys = ['name', 'action', 'translation'];
     $scope.blurb = $scope.magic.blurb;
+    $scope.spells = $scope.magic.spells;
   }]);
