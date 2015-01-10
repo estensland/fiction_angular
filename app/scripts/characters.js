@@ -42,7 +42,7 @@ angular.module('myApp.characters', ['ngRoute'])
       var nativeName = $scope.character.nativeName;
       var house = $scope.character.house;
       var nickname = $scope.character.nickname;
-      var profile_img = $scope.character.profile_img;
+      var profileImg = $scope.character.profileImg;
       var weapons = $scope.character.weapons;
 
       if (nobleOffice !== undefined) {title = title + nobleOffice + " "; }
