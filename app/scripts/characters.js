@@ -23,6 +23,12 @@ angular.module('myApp.characters', ['ngRoute'])
             return response.data;
           });
         }],
+
+        weapons: ['$http', function($http) {
+          return $http.get('/api/weapons.json').then(function(response) {
+            return response.data;
+          });
+        }],
       }
     });
   }])
@@ -32,9 +38,10 @@ angular.module('myApp.characters', ['ngRoute'])
     $scope.characters = characters;
     $scope.param = $routeParams.id;
 }])
-  .controller('CharacterCtrl', ['$scope', '$routeParams', 'characters', function($scope, $routeParams, characters) {
+  .controller('CharacterCtrl', ['$scope', '$routeParams', 'characters', 'weapons', function($scope, $routeParams, characters, weapons) {
     $scope.character = characters[$routeParams.id];
     $scope.coatOfArms = "/api/images/" + $scope.character.coatOfArms;
+
     $scope.title = function(){
       var title = '';
       var nobleOffice = $scope.character.nobleOffice;
@@ -43,7 +50,6 @@ angular.module('myApp.characters', ['ngRoute'])
       var house = $scope.character.house;
       var nickname = $scope.character.nickname;
       var profileImg = $scope.character.profileImg;
-      var weapons = $scope.character.weapons;
 
       if (nobleOffice !== undefined) {title = title + nobleOffice + " "; }
       if (bailicName !== '*Refuses*') {title = title + bailicName + " "; }
@@ -57,5 +63,12 @@ angular.module('myApp.characters', ['ngRoute'])
       }
 
       return title;
+    }();
+    $scope.weapons = function(){
+      var result = []
+      for(var i = 0, ii = $scope.character.weapons.length; i < ii;  i++) {
+        result.push([weapons[$scope.character.weapons[i]], $scope.character.weapons[i]]);
+      }
+      return result;
     }();
   }]);
