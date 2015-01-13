@@ -86,10 +86,20 @@ h2{
 
 /*Character Show*/
 
-.character-info-panel img{
-  width: 70%;
-  height: 70%;
-  margin-left: 17%;
+.character-text-info-section{
+  width: 100%;
+}
+
+.character-text-info-section div{
+  display: inline-block;
+}
+
+.weapons-info-panel{
+  width: 35%;
+  text-align:left;
+  padding: 5px;
+  border: 2px solid black;
+  background-color: #eee;
 }
 
 .character-info-panel{
@@ -99,6 +109,12 @@ h2{
   padding: 5px;
   border: 2px solid black;
   background-color: #eee;
+}
+
+.character-info-panel img{
+  width: 70%;
+  height: 70%;
+  margin-left: 17%;
 }
 
 .character-info-panel span{
