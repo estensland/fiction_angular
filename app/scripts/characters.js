@@ -67,7 +67,7 @@ angular.module('myApp.characters', ['ngRoute'])
     $scope.weapons = function(){
       var result = []
       for(var i = 0, ii = $scope.character.weapons.length; i < ii;  i++) {
-        result.push([weapons[$scope.character.weapons[i]], $scope.character.weapons[i]]);
+        result.push({weapon: weapons[$scope.character.weapons[i]], imgTag: $scope.character.weapons[i]});
       }
       return result;
     }();
