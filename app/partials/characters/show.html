@@ -31,8 +31,8 @@
 <div class='weapons-info-panel'>
   <ul class='weapons-list' ng-repeat="weapon in weapons">
     <li class='weapon-info'>
-      <div><a ng-href="#/weapons/{{weapon[1]}}">{{weapon[0].name}}</a></div>
-      <div><img src='/api/images/weapons/{{weapon[1]}}.png' ></div>
+      <div><a ng-href="#/weapons/{{weapon[1]}}">{{weapon.weapon.name}}</a></div>
+      <div><img src='/api/images/weapons/{{weapon.imgTag}}.png' ></div>
     </li>
   </ul>
 </div>
