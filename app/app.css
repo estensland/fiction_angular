@@ -3,7 +3,6 @@
 .menu {
   list-style: none;
   border-bottom: 0.1em solid black;
-
   margin-bottom: 2em;
   padding: 0 0 0 3em;
 }
@@ -83,7 +82,6 @@ h2{
 }
 
 
-
 /*Character Show*/
 
 .character-text-info-section{
@@ -141,7 +139,6 @@ h2{
   left: 30px;
   bottom:-400px;
 }
-
 
 /* Weapons */
 .weapons-info{
