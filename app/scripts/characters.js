@@ -28,7 +28,7 @@ angular.module('myApp.characters', ['ngRoute'])
           return $http.get('/api/weapons.json').then(function(response) {
             return response.data;
           });
-        }],
+        }]
       }
     });
   }])
@@ -64,8 +64,12 @@ angular.module('myApp.characters', ['ngRoute'])
 
       return title;
     }();
+
     $scope.weapons = function(){
       var result = []
+
+      if ($scope.character.weapons === undefined) {$scope.character.weapons = []}
+
       for(var i = 0, ii = $scope.character.weapons.length; i < ii;  i++) {
         result.push({weapon: weapons[$scope.character.weapons[i]], imgTag: $scope.character.weapons[i]});
       }
