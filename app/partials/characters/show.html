@@ -30,8 +30,8 @@
 </div>
 <div class='weapons-info-panel'>
   <ul class='weapons-list' ng-repeat="weapon in weapons">
-    <li class='weapon-info'>
-      <div><a ng-href="#/weapons/{{weapon[1]}}">{{weapon.weapon.name}}</a></div>
+    <li class='weapon-info-slide'>
+      <div>Name:<a ng-href="#/weapons/{{weapon[1]}}">{{weapon.weapon.name}}</a></div>
       <div><img src='/api/images/weapons/{{weapon.imgTag}}.png' ></div>
     </li>
   </ul>

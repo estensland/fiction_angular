@@ -1,5 +1,14 @@
 /* app css stylesheet */
 
+.body{
+  padding-bottom:60px;
+}
+
+.page-container {
+  min-height:100%;
+  position:relative;
+}
+
 .menu {
   list-style: none;
   border-bottom: 0.1em solid black;
@@ -93,9 +102,27 @@ h2{
 }
 
 .weapons-info-panel{
-  width: 35%;
+  width: 45%;
   text-align:left;
-  padding: 5px;
+  margin: 10px;
+  padding: 2px;
+  border: 2px solid black;
+  background-color: #eee;
+}
+
+.weapons-info-panel li{
+  list-style: none;
+}
+
+.weapons-info-panel img{
+  width: 70%;
+  height: auto;
+}
+
+.weapon-info-slide{
+  width: 90%;
+  text-align:left;
+  padding: 2px;
   border: 2px solid black;
   background-color: #eee;
 }
@@ -133,11 +160,15 @@ h2{
 
 /* Footer */
 .footer {
+  width:100%;
+  height:30px;
+  margin-top: 80px;
+  margin-left: 10px;
+  bottom:0;
+  left:0;
+  position:absolute;
   font-size: 78%;
   display: block;
-  position: absolute;
-  left: 30px;
-  bottom:-400px;
 }
 
 /* Weapons */
